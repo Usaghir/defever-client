@@ -25,7 +25,7 @@ class LoginPage extends Component {
                 <div className="container">
                     <div className="row mt-4">
                         <div className="col-md-6 " style={{color: "white"}}>
-                        <img className="navbar-brand" src={Logo}/>
+                        <img className="navbar-brand" src={Logo} alt="forum logo"/>
                             <p>Web Development Forum</p>
                         </div>
 
