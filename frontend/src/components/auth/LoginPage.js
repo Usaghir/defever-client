@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 import Auth from "../../services/Auth";
+import Logo from "./pinterest_profile_image.png";
 
 class LoginPage extends Component {
     async login(loginData) {
@@ -24,7 +25,7 @@ class LoginPage extends Component {
                 <div className="container">
                     <div className="row mt-4">
                         <div className="col-md-6 " style={{color: "white"}}>
-                            <h1>S7L</h1>
+                        <img className="navbar-brand" src={Logo}/>
                             <p>Web Development Forum</p>
                         </div>
 
