@@ -25,9 +25,9 @@ class LoginPage extends Component {
                             
                             <div className="col mt-4 mr-5">
                                 <h3 >A Web Development</h3>
-                                <article > WEBIA is the forum where user can get the information regarding the different web development 
-                                           topics and also can discus regarding the different web development topics as well. Some of the 
-                                           Topics are mentioned below. 
+                                <article style={{width:650}}>   WEBIA is the forum where user can get the information regarding web development 
+                                                                and also can discus regarding the different web development topics as well. 
+                                                                Some of the topics are mentioned below. 
 
                                     
 
