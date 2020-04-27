@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import RegisterForm from "./RegisterForm";
 import Auth from "../../services/Auth";
 import LoginNavbar from "./LoginNavBar";
+import LoginFooter from "./LoginFooter"
 
 class LoginPage extends Component {
 
@@ -45,6 +46,8 @@ class LoginPage extends Component {
                         </div>
                     </div>
                 </div>
+
+                <LoginFooter/>
             </div>
         );
     }
