@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 import Auth from "../../services/Auth";
-import Logo from "./pinterest_profile_image.png";
+import LoginNavbar from "./LoginNavBar";
 
 class LoginPage extends Component {
-    async login(loginData) {
-        const loginSuccess = await Auth.login(loginData);
-        if (!loginSuccess) {
-            alert("Invalid credentials");
-        }
-    }
+
 
     async register(registrationData) {
         const registerSuccess = await Auth.register(registrationData);
@@ -21,22 +15,31 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <div className="wrapper">
+            <div className="wrapper"  >
+                <LoginNavbar/>
                 <div className="container">
-                    <div className="row mt-4">
-                        <div className="col-md-6 " style={{color: "white"}}>
-                        <img className="navbar-brand" src={Logo}/>
-                            <p>Web Development Forum</p>
+                    
+                    <div className="row mt-5" >
+                        <div className="col-md-6 " style={{color: "white"}} >
+            
+                            
+                            <div className="col mt-4 mr-5">
+                                <h3 >A Web Development</h3>
+                                <article > WEBIA is the forum where user can get the information regarding the different web development 
+                                           topics and also can discus regarding the different web development topics as well. Some of the 
+                                           Topics are mentioned below. 
+
+                                    
+
+                                    </article>
+                            </div>
+                            
                         </div>
 
-                        <div className="col-md-6">
-                            <div className="row">
-                                <div className="col-12  strong-shadow">
-                                    <LoginForm onSubmit={this.login} />
-                                </div>
-
-                                <div className="col-12 mt-4">
-                                    <RegisterForm onSubmit={this.register}/>
+                        <div className="col-md-6" >
+                            <div className="row d-flex justify-content-end">
+                                <div className="col-7 mt-4 ">
+                                    <RegisterForm onSubmit={this.register} />
                                 </div>
                             </div>
                         </div>
