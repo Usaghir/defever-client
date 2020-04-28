@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import LoginForm from "./LoginForm";
-import Logo from "./logo_transparent.png";
+import Logo from "./logo.png";
 import Auth from "../../services/Auth";
 
 class LoginNavbar extends Component {
