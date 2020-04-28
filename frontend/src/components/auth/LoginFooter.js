@@ -5,7 +5,7 @@ export class LoginFooter extends Component {
         return (
             <footer className="page-footer font-small mt-5  bg-light">
 
-  <div className="container text-center mb-5 pb-5 m-50 " style={{height: 100}}>
+  <div className="container text-center mt-5 pt-5 mb-5 pb-5 m-50 ">
 
     <div className="row ">
 
@@ -35,17 +35,13 @@ export class LoginFooter extends Component {
           </a>
         </div>
       </div>
-      
-
+    
     </div>
-  
 
   </div>
- 
 
- 
   <div className="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> SDA.com</a>
+    <a href="https://www.novarepotential.se/software-development-academy/"> www.novarepotential.se</a>
   </div>
  
 
