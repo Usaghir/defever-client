@@ -1,4 +1,4 @@
-package se.kth.sda.skeleton.auth;
+package se.kth.sda.defever.auth;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator;

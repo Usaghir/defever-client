@@ -1,4 +1,4 @@
-package se.kth.sda.skeleton.comments;
+package se.kth.sda.defever.comments;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

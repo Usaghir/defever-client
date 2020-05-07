@@ -1,4 +1,4 @@
-package se.kth.sda.skeleton.auth;
+package se.kth.sda.defever.auth;
 
 public class AuthResponse {
     private String token;

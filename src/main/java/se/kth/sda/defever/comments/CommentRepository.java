@@ -1,4 +1,4 @@
-package se.kth.sda.skeleton.comments;
+package se.kth.sda.defever.comments;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

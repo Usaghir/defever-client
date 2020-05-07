@@ -1,6 +1,6 @@
-package se.kth.sda.skeleton.comments;
+package se.kth.sda.defever.comments;
 
-import se.kth.sda.skeleton.posts.Post;
+import se.kth.sda.defever.posts.Post;
 
 import javax.persistence.*;
 

@@ -1,4 +1,4 @@
-package se.kth.sda.skeleton.posts;
+package se.kth.sda.defever.posts;
 
 import javax.persistence.*;
 
