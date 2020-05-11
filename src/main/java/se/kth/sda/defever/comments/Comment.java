@@ -15,7 +15,8 @@ public class Comment {
   @Column(name = "body")
   private String body;
 
-  @ManyToOne private Post post;
+  @ManyToOne
+  private Post post;
 
   // Hibernate requires empty constructor
   public Comment() {}
