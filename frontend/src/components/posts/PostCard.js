@@ -1,12 +1,20 @@
 import React from "react";
 import CommentList from "../comments/CommentList";
 
-function PostCard({ post, onDeleteClick }) {
+function PostCard({ post, onDeleteClick, onLikeClick }) {
+  const [likes, setLikes] = React.useState(post.likes);
+
+  const incrementLikes = () => {
+    setLikes(likes + 1);
+    onLikeClick({ id : post.id, body : post.body, likes : likes + 1});
+  };
+
   return (
     <div className="card mt-3">
       <div className="card-body">
         <p>{post.body}</p>
-
+        <p>{(likes === 0) ? 'No' : likes} likes</p>
+        <button className="btn btn-primary btn-sm" onClick={incrementLikes} id="post-like">Like</button>
         <button className="btn btn-danger btn-sm mb-2" onClick={onDeleteClick}>
           Delete
         </button>
