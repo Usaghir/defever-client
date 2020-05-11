@@ -1,8 +1,12 @@
 import Api from "./Api";
 
 class PostsApi {
+
+    
     getAllPosts() {
+        
         return Api.get('/posts');
+        
     }
 
     getPostById(id) {
@@ -20,6 +24,8 @@ class PostsApi {
     deletePost(id) {
         return Api.delete('/posts/'+id);
     } 
+    
 }
+
 
 export default new PostsApi();

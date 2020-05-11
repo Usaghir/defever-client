@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import {Navbar, Container, Col} from 'react-bootstrap';
 
-class ChatPage extends Component {
+class HomeFooter extends Component {
     render() {
         let year = new Date().getFullYear();
         return (
@@ -19,4 +19,4 @@ class ChatPage extends Component {
     }
 }
 
-export default ChatPage;
+export default HomeFooter;
