@@ -14,6 +14,9 @@ public class Comment {
 
   @Column(name = "body")
   private String body;
+  
+  @Column(name = "likes")
+  private Long likes;
 
   @ManyToOne
   private Post post;
@@ -21,9 +24,10 @@ public class Comment {
   // Hibernate requires empty constructor
   public Comment() {}
 
-  public Comment(Long id, String body, Post post) {
+  public Comment(Long id, String body, Long likes, Post post) {
     this.id = id;
     this.body = body;
+    this.likes = likes;
     this.post = post;
   }
 
@@ -49,5 +53,13 @@ public class Comment {
 
   public void setPost(Post post) {
     this.post = post;
+  }
+
+  public Long getLikes() {
+	return likes;
+  }
+
+  public void setLikes(Long likes) {
+	this.likes = likes;
   }
 }
