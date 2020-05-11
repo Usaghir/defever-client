@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import PostsApi from "./../../api/PostsApi";
 import PostForm from "./PostForm";
 import PostCard from "./PostCard";
+
+import UserApi from "../../api/UserApi";
 
 class PostsPage extends React.Component {
   constructor(props) {
@@ -11,6 +13,8 @@ class PostsPage extends React.Component {
       posts: [],
     };
   }
+
+
 
   async createPost(postData) {
     if(postData !== undefined) {
@@ -48,6 +52,7 @@ class PostsPage extends React.Component {
 
   render() {
     const posts = this.state.posts;
+
 
     return (
       <div>

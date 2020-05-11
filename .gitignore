@@ -6,6 +6,8 @@ build/
 !**/src/main/**
 !**/src/test/**
 bin
+docker-compose.yaml
+src/main/resources/application.properties
 
 ### STS ###
 .apt_generated
