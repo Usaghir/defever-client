@@ -1,18 +1,69 @@
 import React, { useState, useEffect } from "react";
-import queryString from 'query-string';
-import io from 'socket.io-client'
-//import SockJS from 'sockjs-client';
-//import stompClient from 'stomp-client';
+
+import SockJS from 'sockjs-client';
+import Stomp from 'stompjs';
 
 import "./Chat.css";
 
-const Chat = ({location}) => { 
+
+let stompClient = null;
+const Chat = (event) => { 
+    const username = prompt("what is your username");
   
+    if (username){
+        let socket = new SockJS('http://localhost:8080/ws');
+        stompClient = Stomp.over(socket);
+        stompClient.connect({}, onConnected, onError);
+       
+
+    }
+   
+
+
+function onConnected(){
+    console.log('connected');
+
+    stompClient.subscribe('/topic/public', onMessageReceived);
+
+    // Tell your username to the server
+    stompClient.send("/app/chat.register",
+        {},
+        JSON.stringify({sender: username, type: 'JOIN'})
+    )
+}
+
+function onError(){
+    console.log('error');
+}
+
+function onMessageReceived(){
+    console.log('message recived ');
+}
+	
 	
     return (
   
 			
-				<h2>Chat</h2>
+        <div id="chat-page" className="hidden">
+		<div className="chat-container">
+			<div className="chat-header">
+				<h2>JavaTechie Global Chat Box</h2>
+			</div>
+			<div className="connecting">Connecting...</div>
+			<ul id="messageArea">
+
+			</ul>
+			<form id="messageForm" name="messageForm" >
+				<div className="form-group">
+					<div className="input-group clearfix">
+						<input type="text" id="message" placeholder="Type a message..."
+							autoComplete="off" className="form-control" />
+						<button type="submit" className="primary">Send</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 		
     )
   

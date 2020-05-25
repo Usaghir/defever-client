@@ -12,7 +12,6 @@ import LoginPage from "./components/auth/LoginPage";
 import HomePage from "./components/home/HomePage";
 import PostsPage from "./components/posts/PostsPage";
 import ProfilePage from "./components/profile/ProfilePage";
-import Join from "./components/chat/Join";
 import Chat from "./components/chat/Chat";
 //import ChatApp from "./ChatApp";
 
@@ -38,15 +37,12 @@ function App() {
             <ProfilePage user={user} />
           </Route>
 
-          <Route path="/homepage">
-            <HomePage />
-          </Route>
           <Route path="/chat">
             <Chat />
           </Route>
 
           <Route path="/" >
-            <Join />
+            <HomePage />
           </Route>
         </Switch>
       </div>
