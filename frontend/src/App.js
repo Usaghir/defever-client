@@ -12,8 +12,10 @@ import LoginPage from "./components/auth/LoginPage";
 import HomePage from "./components/home/HomePage";
 import PostsPage from "./components/posts/PostsPage";
 import ProfilePage from "./components/profile/ProfilePage";
-//import ChatPage from "./components/chat/ChatFooter";
-import ChatApi from "./components/chat/ChatApi";
+import Join from "./components/chat/Join";
+import Chat from "./components/chat/Chat";
+//import ChatApp from "./ChatApp";
+
 
 import UserApi from "./api/UserApi";
 
@@ -36,12 +38,15 @@ function App() {
             <ProfilePage user={user} />
           </Route>
 
+          <Route path="/homepage">
+            <HomePage />
+          </Route>
           <Route path="/chat">
-            <ChatApi />
+            <Chat />
           </Route>
 
-          <Route path="/">
-            <HomePage />
+          <Route path="/" >
+            <Join />
           </Route>
         </Switch>
       </div>

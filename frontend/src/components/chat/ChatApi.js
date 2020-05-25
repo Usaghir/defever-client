@@ -1,31 +1,19 @@
-import React, { Component } from 'react';
-import SockJsClient from 'react-stomp';
 
-class ChatApi extends React.Component {
-    
-    
-    render() {
-      return (
-        <div>
-          
- <SockJsClient url='http://localhost:8080/ws'
-    topics={['/topic/public']}
-    onConnect={() => {
-        console.log("connected");
-    }}
-    onDisconnect={() => {
-        console.log("Disconnected");
-    }}
-    onMessage={(msg) => {
-        console.log(msg);
-    }}
-    ref={(client) => {
-        this.clientRef = client
-}}/>
+import SockJS from 'sockjs-client';
+import stompClient from 'stomp-client';
 
-        </div>
-      );
+
+function connect(event) {
+    let username = document.querySelector('#name').value.trim();
+
+    if(username) {
+        usernamePage.classList.add('hidden');
+        chatPage.classList.remove('hidden');
+
+        var socket = new SockJS('/ws');
+        stompClient = Stomp.over(socket);
+
+        stompClient.connect({}, onConnected, onError);
     }
-  }
- 
-export default ChatApi;
+    event.preventDefault();
+}

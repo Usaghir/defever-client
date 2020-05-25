@@ -13,7 +13,7 @@ public class ChatController {
 
 
 	/*-------------------- Group (Public) chat--------------------*/
-	/*@MessageMapping("/sendMessage")
+	@MessageMapping("/sendMessage")
 	@SendTo("/topic/pubic")
 	public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {
 		return chatMessage;
@@ -22,29 +22,29 @@ public class ChatController {
 	@MessageMapping("/addUser")
 	@SendTo("/topic/pubic")
 	public ChatMessage addUser(@Payload ChatMessage chatMessage,
-			SimpMessageHeaderAccessor headerAccessor) {
+							   SimpMessageHeaderAccessor headerAccessor) {
 		// Add user in web socket session
 		headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
 		return chatMessage;
-	}*/
+	}
 
 
 	/*--------------------Private chat--------------------*/
 	@Autowired
 	private SimpMessagingTemplate simpMessagingTemplate;
 
-	@MessageMapping("/chat.register")
-	@SendTo("/topic/public")
+	@MessageMapping("/sendPrivateMessage")
+	//@SendTo("/queue/reply")
 	public void sendPrivateMessage(@Payload ChatMessage chatMessage) {
 		simpMessagingTemplate.convertAndSendToUser(
-				chatMessage.getReceiver().trim(), "/reply", chatMessage); 
+				chatMessage.getReceiver().trim(), "/reply", chatMessage);
 		//return chatMessage;
 	}
 
-	@MessageMapping("//chat.send")
-	@SendTo("/topic/public")
+	@MessageMapping("/addPrivateUser")
+	@SendTo("/queue/reply")
 	public ChatMessage addPrivateUser(@Payload ChatMessage chatMessage,
-			SimpMessageHeaderAccessor headerAccessor) {
+									  SimpMessageHeaderAccessor headerAccessor) {
 		// Add user in web socket session
 		headerAccessor.getSessionAttributes().put("private-username", chatMessage.getSender());
 		return chatMessage;
