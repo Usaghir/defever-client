@@ -19,8 +19,6 @@ const Chat = (event) => {
 
     }
    
-
-
 function onConnected(){
     console.log('connected');
 
@@ -62,7 +60,7 @@ function send(event) {
         <div id="chat-page" className="hidden">
 		<div className="chat-container">
 			<div className="chat-header">
-				<h2>JavaTechie Global Chat Box</h2>
+				<h2>Defever Global Chat Box</h2>
 			</div>
 			<div className="connecting">Connecting...</div>
 			<ul id="messageArea">
