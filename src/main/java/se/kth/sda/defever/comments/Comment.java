@@ -24,7 +24,7 @@ public class Comment {
   @Column(name = "date")
   private String date;
   
-  @ManyToMany(cascade = {CascadeType.ALL})
+  @ManyToMany
   @JoinTable(name = "comment_likes",
 		  	 joinColumns = {@JoinColumn(name = "comment_id")},
 		  	 inverseJoinColumns = {@JoinColumn(name = "user_id")})
