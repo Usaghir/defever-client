@@ -25,6 +25,7 @@ public class Comment {
   private String date;
   
   @ManyToMany
+  @OnDelete(action = OnDeleteAction.CASCADE)
   @JoinTable(name = "comment_likes",
 		  	 joinColumns = {@JoinColumn(name = "comment_id")},
 		  	 inverseJoinColumns = {@JoinColumn(name = "user_id")})
