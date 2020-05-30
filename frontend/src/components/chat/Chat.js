@@ -133,7 +133,7 @@ class Chat extends Component {
                 <Avatar className="bg-primary mr-3">{mess[0]}</Avatar>
                   <h5>{mess}</h5>
                   </div>
-                  <div className=">{this.state.time}</div>
+                  <div className="badge text-wrap ">{this.state.time}</div>
               </li>
             )
           )}
