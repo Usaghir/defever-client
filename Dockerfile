@@ -10,7 +10,11 @@ COPY src /app/src
 # Copy your build.gradle or build.gradle.kts file
 COPY build.gradle /app/build.gradle
 
-# Build your application without Gradle Wrapper
+# Install Gradle
+RUN apt-get update && \
+    apt-get install -y gradle
+
+# Build your application
 RUN gradle build
 
 # Create a new stage
