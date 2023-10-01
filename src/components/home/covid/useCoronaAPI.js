@@ -7,7 +7,7 @@ export function useCoronaAPI(
   { initialData = {}, converter = (data) => data, refetchInterval = null }
 ) {
   const [data, setData] = useState(initialData);
-  const convertData = useCallback(converter, []);
+  const convertData = useCallback(converter, [converter]);
 
   useEffect(() => {
     const fetchData = async () => {
