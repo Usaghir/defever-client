@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
+import axios from "axios";
 
-const BASE_URL = "https://corona.lmao.ninja/v2";
+const BASE_URL = "https://disease.sh/v3/covid-19";
 
 export function useCoronaAPI(
   path,
@@ -12,9 +13,14 @@ export function useCoronaAPI(
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${BASE_URL}${path}`);
-        const data = await response.json();
-        setData(convertData(data));
+        const response = await axios.get(`${BASE_URL}${path}`, {
+          headers: {
+            "Content-Type": "application/json",
+            mode: "cors",
+          },
+        });
+
+        setData(convertData(response.data));
       } catch (error) {
         console.log(error);
       }

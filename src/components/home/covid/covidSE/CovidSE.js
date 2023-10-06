@@ -4,7 +4,7 @@ import SeStats from "./SeStats";
 import RegionsChart from "./RegionsChart";
 import SelectDataKey from "./SelectDataKey";
 
-const BASE_URL = "https://corona.lmao.ninja/v2";
+const BASE_URL = "/";
 const SE_URL =
   "https://api.apify.com/v2/key-value-stores/8mRFdwyukavRNCr42/records/LATEST?disableRedirect=true";
 
