@@ -8,6 +8,7 @@ export function useCoronaAPI(
   { initialData = {}, converter = (data) => data, refetchInterval = null }
 ) {
   const [data, setData] = useState(initialData);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const convertData = useCallback(converter, []);
 
   useEffect(() => {
