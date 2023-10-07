@@ -9,7 +9,7 @@ const Api = axios.create({
 
 Api.interceptors.request.use((config) => {
   if (Auth.isLoggedIn()) {
-    const authHeader = Auth.getAuthorizationHeader();git s
+    const authHeader = Auth.getAuthorizationHeader()
     config.headers['common']['authorization'] = authHeader;
   }
 
