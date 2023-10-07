@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Auth from '../services/Auth';
 
-const BASE_URL = 'https://defever-production.up.railway.app/';
+const BASE_URL = '/';
 
 const Api = axios.create({
   baseURL: BASE_URL,
@@ -9,7 +9,7 @@ const Api = axios.create({
 
 Api.interceptors.request.use((config) => {
   if (Auth.isLoggedIn()) {
-    const authHeader = Auth.getAuthorizationHeader();
+    const authHeader = Auth.getAuthorizationHeader();git s
     config.headers['common']['authorization'] = authHeader;
   }
 
