@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const NEWS_URL =
-  "https://newsapi.org/v2/top-headlines?country=se&category=general&apiKey=1cbdee4328ff4e118798fe8218263488";
+  "https://newsapi.org/v2/top-headlines?country=se&category=general&apiKey=7bd96d34f01c4853b16aed3560607858";
 
 export default function News() {
   const [news, setNews] = useState([]);
