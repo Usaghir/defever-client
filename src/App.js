@@ -13,6 +13,7 @@ import Covid from "./components/home/covid/Covid";
 import Posts from "./components/home/posts/Posts";
 import Profile from "./components/home/profile/Profile";
 import News from "./components/home/news/News";
+import NotFound from "./components/NotFound";
 //import ChatApp from "./ChatApp";
 
 import UserApi from "./api/UserApi";
@@ -34,6 +35,7 @@ function App() {
               <Route path="/profile" element={<Profile user={user} />} />
               <Route path="/news" element={<News />} />
               <Route path="/" element={<Covid />} />
+              <Route path="*" element={<NotFound />} /> {/* Catch-all route for Not Found */}
             </Routes>
           </div>
         </Router>
