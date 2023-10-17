@@ -53,7 +53,7 @@ function Navbar(props) {
                   Posts
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   to="/news"
                   className="nav-link  text-uppercase link-style"
@@ -63,7 +63,7 @@ function Navbar(props) {
                 >
                   News
                 </Link>
-              </li>
+              </li> */}
             </ul>
             <ul className="navbar-nav ">
               <li className="nav-item">
