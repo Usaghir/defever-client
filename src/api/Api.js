@@ -1,7 +1,7 @@
 import axios from "axios";
 import Auth from "../services/Auth";
 
-const BASE_URL = "https://defever-production.up.railway.app";
+const BASE_URL = "https://defever-webservice.onrender.com";
 
 const Api = axios.create({
   baseURL: BASE_URL,
